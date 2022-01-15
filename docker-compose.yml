@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  etherminer:
+    container_name: etherminer
+    restart: always
+    build: ./
+    command: python main.py
