@@ -12,4 +12,4 @@ services:
             - driver: nvidia
               count: 1
               capabilities: [ gpu ]
-    command: ethminer -U -P stratum://${WALLET_URL}.${WORKER}@eu1.ethermine.org:14444
+    command: ethminer -U -P stratum://${WALLET_ADDR}.${WORKER}@eu1.ethermine.org:14444
