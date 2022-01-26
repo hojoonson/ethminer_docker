@@ -5,4 +5,11 @@ services:
     container_name: etherminer
     restart: always
     build: ./
-    command: python main.py
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [ gpu ]
+    command: ethminer -U -P stratum://${WALLET_URL}.${WORKER}@eu1.ethermine.org:14444

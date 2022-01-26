@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.6.0-runtime-ubuntu20.04
+FROM nvidia/cuda:11.2.0-devel-ubuntu20.04
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Etc/UTC
 RUN mkdir /root/ethminer
@@ -12,10 +12,10 @@ RUN apt update\
     g++\
     libx11-dev\
     libxext-dev
+COPY boost_1_66_0.7z /root/.hunter/_Base/Download/Boost/1.66.0/075d0b4/
 RUN git clone https://github.com/ethereum-mining/ethminer .\
     &&git submodule init\
     &&git submodule update\
     &&mkdir build; cd build\
     &&cmake .. -DETHASHCUDA=ON -DETHASHCL=OFF\
-    &&cmake --build .\
     &&make install 
