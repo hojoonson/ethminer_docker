@@ -11,11 +11,13 @@ RUN apt update\
     cmake\
     g++\
     libx11-dev\
-    libxext-dev
+    libxext-dev\
+    xinit\
+    nvidia-settings
 COPY boost_1_66_0.7z /root/.hunter/_Base/Download/Boost/1.66.0/075d0b4/
 RUN git clone https://github.com/ethereum-mining/ethminer .\
     &&git submodule init\
     &&git submodule update\
     &&mkdir build; cd build\
     &&cmake .. -DETHASHCUDA=ON -DETHASHCL=OFF\
-    &&make install 
+    &&make install
