@@ -1,5 +1,5 @@
-# etherminer_docker
-Really simple implementation of ethereum mining with etherminer and docker.
+# ethminer_docker
+Really simple implementation of ethereum mining with ethminer and docker.
 
 <br>
 
